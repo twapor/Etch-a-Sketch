@@ -8,11 +8,19 @@
 </head>
 <body>
     <div id="container">
+        <div id="canvas-container">
+        </div>
         <div id="control-panel">
             <div id="size-controls">
                 <h3>Canva Size</h3>
                 <p>Size: <output class="value"></output></p>
-                <input type="range" id="size-selector" name="pixels" min="16" max="32" value="16"> 
+                <button type="button" id="resize">Resize</button>
+                <input type="range" id="size-selector" name="pixels" min="16" max="32" value="16">
+            </div>
+            <div id="color-controls">
+                <button type="button" id="white">White</button>
+                <button type="button" id="erase">Erase</button>
+                <button type="button" id="clear">Clear Canvas</button>
             </div>
         </div>
     </div>
