@@ -4,10 +4,17 @@ body{
     background-color: #111827;
 }
 
+#canvas-container{
+    display: flex;
+    justify-content: center;
+}
+
 .canvas-grid {
     display: flex;
     justify-content: center;
     margin: 20px;
+    width: 384px;
+    height: 384px;
 }
 
 .white {
@@ -16,8 +23,9 @@ body{
 
 .pixel {
     border: 1px solid #fff;
-    height: 10px;
-    width: 10px;
+    height: 22px;
+    width: 22px;
+    flex-shrink: 3;
 }
 
 #control-panel{

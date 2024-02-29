@@ -1,17 +1,21 @@
 const value = document.querySelector('.value');
 const input = document.querySelector('#size-selector');
+
 value.textContent = input.value;
 input.addEventListener('input', (event) => {
     value.textContent = event.target.value;
 });
+
 const eraser = document.querySelector('#erase');
 eraser.addEventListener('click', () => {
     eraserOn = true;
 });
+
 const whitePaint = document.querySelector('#white');
 whitePaint.addEventListener('click', () => {
     eraserOn = false;
 });
+
 let eraserOn = false;
 const resize = document.querySelector('#resize');
 resize.addEventListener('click', () => {resizeCanvas(input.value)})
@@ -31,7 +35,7 @@ function resizeCanvas(size){
     createCanvas(size);
 }
 
-function createCanvas(size){
+function createCanvas(size,){
     const grid = document.createElement('div');
     grid.classList.add('canvas-grid');
     canvasContainer.appendChild(grid);
@@ -42,6 +46,8 @@ function createCanvas(size){
         for(let j = 0; j < size; j++){
             const pixel = document.createElement('div');
             pixel.classList.add('pixel');
+            pixel.style.width = 384 / size - 2 +`px`;
+            pixel.style.height = 384 / size - 2 +`px`;
             pixel.addEventListener('mouseover', () => {
                 if(eraserOn){
                     pixel.classList.remove('white');
